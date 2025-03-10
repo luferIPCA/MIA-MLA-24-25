@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Multiple Instances</title>
+</head>
+<body>
+    <h2>Enter House Features for Multiple Predictions</h2>
+
+    <!-- Form for multiple inputs -->
+    <form method="POST">
+        <textarea name="instances_json" rows="6" cols="50" placeholder='[{"MedInc": 5.3, "AveRooms": 7.4, "AveOccup": 1.6}, {"MedInc": 4.2, "AveRooms": 6.8, "AveOccup": 2.1}]' required></textarea><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Display results: Jinja2 template -->
+    {% if predictions %}
+        <h3>Predicted House Prices:</h3>
+        <ul>
+            {% for price in predictions %}
+                <li>{{ price }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <br><br>
+    <a href="/">Back to Single Prediction</a>
+</body>
+</html>

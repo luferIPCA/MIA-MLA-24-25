@@ -1,0 +1,34 @@
+<!--
+MIAA-ML
+lufer
+FastAPI test
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+</head>
+<body>
+	<h2>Predict House Prices for Multiple Instances - MIAA - ML</h2>
+    <h2>Enter House Features</h2>
+    <form method="POST">
+        <label>Median Income:</label>
+        <input type="text" name="MedInc" required><br/><br/>
+
+        <label>Average Rooms:</label>
+        <input type="text" name="AveRooms" required><br/><br/>
+
+        <label>Average Occupancy:</label>
+        <input type="text" name="AveOccup" required><br/><br/>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted House Price: {{ prediction }}</h3>
+    {% endif %}
+	
+</body>
+</html>
